@@ -10,6 +10,12 @@
  * cara menggunakan lihat pada fungsi main()
  */
 
+/*
+ * Diselesaikan oleh Nur Ahmad Khatim
+ * -- tanggal 21 Maret 2021
+ * Struktur Data 2021
+ */
+
 #include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
