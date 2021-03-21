@@ -201,7 +201,7 @@ void dlist_popBack(List *list)
     }
 }
 
-int sum = 0, index, rev[100005];
+int index, rev[100005];
 
 void printElement(int *elem) {
     printf("%d ", *elem);
@@ -216,16 +216,21 @@ void reverseEach(int *elem) {
 }
 
 void sumDigit(int *elem) {
-    *elem = sum;
+    int temp = *elem;
+    int sum = 0;
+	while(temp != 0) {
+		sum += temp % 10;
+		temp /= 10;
+	}
+	*elem = sum;
 }
 
 void forEachElement(List *list, void (*f)(int *)) {
 	if (!dlist_isEmpty(list)) {
 		DListNode *temp = list->_head;
-		sum = 0, index = list->_size - 1;
+		index = list->_size - 1;
 		temp = list->_head;
 		while(temp != NULL) {
-			sum += temp->data;
 			rev[index--] = temp->data;
 			temp = temp->next;
 		}
@@ -250,11 +255,11 @@ int main(int argc, char const *argv[])
     dlist_init(&myList);
 
     // Gunakan operasi linked list
-    dlist_pushBack(&myList, 1);
-    dlist_pushBack(&myList, 2);
-    dlist_pushBack(&myList, 3);
-    dlist_pushBack(&myList, 4);
-    dlist_pushBack(&myList, 5);
+    dlist_pushBack(&myList, 111);
+    dlist_pushBack(&myList, 222);
+    dlist_pushBack(&myList, 333);
+    dlist_pushBack(&myList, 444);
+    dlist_pushBack(&myList, 555);
     
     // Isi List => [1, 2, 3, 4, 5]
     
